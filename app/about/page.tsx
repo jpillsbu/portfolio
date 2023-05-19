@@ -17,7 +17,7 @@ const About = () => {
                             John's portfolio and blog website is not just a showcase of his skills, but it also serves as a valuable resource for anyone interested in technology and programming. John is committed to sharing his knowledge and experience with others and hopes that his website will inspire and motivate others to pursue their own passions and build great things. Whether you are a seasoned developer or just starting in the tech industry, John's website has something to offer for everyone.</p>
                     </div>
                     <div className="w-full flex justify-center items-center">
-                        <img className="h-4/5 object-contain rounded-3xl" src="profile.jpeg" alt="profile picture" />
+                        <img className="h-4/5 object-contain rounded-3xl" src="profile.png" alt="profile picture" />
                     </div>
                 </div>
             </div>
