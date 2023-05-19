@@ -5,7 +5,7 @@ const projects = [
         id: 1,
         title: "NFT Site",
         description: "This is a site that I made to learn about NFTs and how to mint them. It is a simple site that allows you to mint an NFT and then view it on the blockchain.",
-        image: "/NFT-image.png",
+        image: "/NFTImage.png",
         link: "https://nft-site-seven.vercel.app/"
     }
 ]
