@@ -22,7 +22,8 @@ const About = () => {
                         })}
                     </div>
                     <div className="w-full flex justify-center items-center">
-                        <Image className="h-4/5 object-contain rounded-3xl" src="profile.png" alt="profile picture" />
+                        <Image className="w-fit h-4/5 object-contain rounded-3xl"
+                            width="400" height="400" src="/profile.png" alt="profile picture" />
                     </div>
                 </div>
             </div>
