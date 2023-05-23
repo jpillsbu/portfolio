@@ -9,11 +9,11 @@ const About = () => {
 
     return (
         <div className="h-[calc(100vh-4rem)]">
-            <div className="h-full">
+            <div className="h-full flex flex-col">
                 <div className="flex justify-center flex-col items-center">
                     <h2 className="p-6 flex text-5xl">Learn about this site!</h2>
                 </div>
-                <div className="h-[calc(100vh-9rem)] flex justify-between">
+                <div className="flex flex-col lg:flex-row  justify-between flex-grow">
                     <div className="w-full flex flex-col justify-center">
                         {essay.map((paragraph) => {
                             return (
