@@ -1,6 +1,3 @@
-import type { Models } from "appwrite";
-
-
 interface Projects {
     projects: Project[];
 }

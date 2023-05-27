@@ -13,7 +13,7 @@ function Project({ project }: Props) {
     useEffect(() => {
         if (project.image) {
             const fetchImage = async () => {
-                const url = await getUrl(project.image)
+                const url = await getUrl(project.image!)
                 if (url) {
                     setImageUrl(url.toString())
                 }
