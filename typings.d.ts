@@ -16,4 +16,10 @@ interface Image {
     fileId: string;
 }
 
-export type { Projects, Project, Image };
+interface User {
+    $id: string;
+    name: string;
+    email: string;
+}
+
+export type { Projects, Project, Image, User };

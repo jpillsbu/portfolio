@@ -14,10 +14,6 @@ const Projects = () => {
         getProjects()
     }, [getProjects])
 
-
-
-    console.log(completedProjects);
-
     return (
         <div className="h-[calc(100vh-4rem)]">
             <div className="h-full">
@@ -27,9 +23,8 @@ const Projects = () => {
                 <div className="flex flex-col items-center justify-center">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-9 max-w-7xl mx-auto p-5">
                         {completedProjects.projects.map((project) => (
-                            (
-                                <Project key={project.$id} project={project} />
-                            )))}
+                            <Project key={project.$id} project={project} />
+                        ))}
                     </div>
                 </div>
             </div>

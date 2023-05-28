@@ -1,9 +1,13 @@
 "use client";
 
+import { useUserStore } from "@/store/UserStore";
 import Link from "next/link"
 import { useState } from "react"
 
 function Header() {
+    const [user] = useUserStore((state) => [
+        state.user,
+    ]);
     const [navbar, setNavbar] = useState(false)
     return (
         <header>
@@ -25,7 +29,6 @@ function Header() {
                                 </button>
                             </div>
                         </div>
-
                         <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? 'pl-4 block' : 'hidden'}`}>
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                                 <li>
@@ -39,17 +42,22 @@ function Header() {
                                     </Link>
                                 </li>
                                 <li>
-
                                     <Link className="text-gray-700 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" onClick={() => setNavbar(false)} href="/projects">
                                         Projects
                                     </Link>
                                 </li>
                                 <li>
-
                                     <Link className="text-gray-700 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" onClick={() => setNavbar(false)} href="/blog">
                                         Blog
                                     </Link>
                                 </li>
+                                {user.$id && (
+                                    <li>
+                                        <Link className="text-gray-700 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" onClick={() => setNavbar(false)} href="/admin">
+                                            Admin
+                                        </Link>
+                                    </li>
+                                )}
                             </ul>
                         </div>
                     </div>
