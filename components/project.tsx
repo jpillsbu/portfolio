@@ -20,7 +20,6 @@ function Project({ project }: Props) {
             }
             fetchImage()
         }
-
     }, [project])
 
     return (
