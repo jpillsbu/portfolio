@@ -2,6 +2,7 @@ import { ID, databases } from "@/appwrite"
 
 export const createProject = async (projectTitle: string, projectDescription: string, projectLink: string, projectImage: string) => {
     try {
+
         try {
             let image = JSON.parse(projectImage);
             if (typeof image !== 'object' || !image.bucketId || !image.fileId) {

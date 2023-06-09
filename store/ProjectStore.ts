@@ -18,6 +18,6 @@ export const useProjectStore = create<ProjectsState>((set) => ({
     set({ completedProjects });
   },
   createProject: async (title, description, link, image) => {
-    const completedProjects = await createProject(title, description, link, image);
+    await createProject(title, description, link, image);
   }
 }))

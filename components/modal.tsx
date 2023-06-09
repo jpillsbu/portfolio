@@ -2,7 +2,7 @@ import { useProjectStore } from '@/store/ProjectStore'
 import { Dialog, Transition } from '@headlessui/react'
 import { FormEvent, Fragment, useState } from 'react'
 
-export default function MyModal() {
+export default function MyModal({ buttonTitle }: { buttonTitle: string }) {
     const [title, setTitle] = useState("")
     const [desc, setDesc] = useState("")
     const [link, setLink] = useState("")
@@ -23,7 +23,6 @@ export default function MyModal() {
 
     const handleCreatePost = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(title, desc, link, image)
         createProject(title, desc, link, image)
         setTitle("")
         setDesc("")
@@ -49,7 +48,7 @@ export default function MyModal() {
                     onClick={openModal}
                     className="flex flex-row justify-center items-center rounded-md bg-white bg-opacity-20 px-4 py-2 space-x-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                 >
-                    <div>Add Project</div>
+                    <div>Add {buttonTitle}</div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                         <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z" clipRule="evenodd" />
                     </svg>
@@ -114,15 +113,15 @@ export default function MyModal() {
                                             </p>
                                         </div>
                                         <div className="mt-4">
-                                            { disabledButton() ?
-                                            <button disabled></button>
-                                            :
-                                            <button 
-                                                type="submit" 
-                                                className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                            >
-                                                Create Project
-                                            </button>
+                                            {disabledButton() ?
+                                                <button disabled></button>
+                                                :
+                                                <button
+                                                    type="submit"
+                                                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                                >
+                                                    Create Project
+                                                </button>
                                             }
                                         </div>
                                     </form>

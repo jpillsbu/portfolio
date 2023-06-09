@@ -27,10 +27,8 @@ const Projects = () => {
                     Here is a list of my projects
                 </div>
                 <div>
-                    {user.$id && (
-                        <div className="">
-                            <MyModal />
-                        </div>
+                    {!user.$id && (
+                        <MyModal buttonTitle="Project" />
                     )}
                 </div>
                 <div className="flex flex-col items-center justify-center">
